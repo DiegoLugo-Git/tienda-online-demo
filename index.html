@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tienda Demo</title>
+
+  <!-- Fuente moderna -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">MiTienda</div>
+
+      <div class="controls">
+        <div class="categories" role="tablist" aria-label="Categorías">
+          <button class="catBtn active" data-category="all">Todos</button>
+          <button class="catBtn" data-category="Tecnologia">Electrónica</button>
+          <button class="catBtn" data-category="Ropa">Ropa</button>
+          <button class="catBtn" data-category="Tenis">Tenis</button>
+          <button class="catBtn" data-category="Perfumes">Perfumes</button>
+        </div>
+
+        <div class="search-wrap">
+          <input id="searchInput" type="search" placeholder="Buscar producto..." aria-label="Buscar productos">
+        </div>
+
+        <button id="cartBtn" class="cart-btn" aria-haspopup="dialog" aria-expanded="false">
+          🛒 <span id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="productContainer" class="grid"></section>
+  </main>
+
+  <!-- Modal carrito -->
+  <div id="cartModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+
+    <aside class="cart-panel" role="document">
+      <div class="cart-header">
+        <h2 id="cartTitle">Carrito</h2>
+        <button id="closeCartBtn" class="icon-btn" aria-label="Cerrar carrito">✕</button>
+      </div>
+
+      <div id="cartItems" class="cart-items">
+        <!-- items se inyectan aquí -->
+      </div>
+
+      <div class="cart-footer">
+        <div class="total">
+          <span>Total</span>
+          <strong>$<span id="cartTotal">0</span></strong>
+        </div>
+        <div class="cart-actions">
+          <button id="clearCartBtn" class="btn secondary">Vaciar</button>
+          <button id="checkoutBtn" class="btn primary">Finalizar compra</button>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
